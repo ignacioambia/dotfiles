@@ -1,0 +1,48 @@
+
+[user]
+	name = Ignacio Ambia 
+	email = ignacio.ambia@gmail.com
+# [core]
+# 	editor = code
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[alias]
+	br = branch
+	lg = log --pretty='format:%C(Yellow)%ad %Cred%h %C(Cyan)%an %Creset%s %Cgreen%d' --date=format:'%d-%m-%y %H:%M'
+	l = lg -1
+	s = status
+	st = stash
+	stl = stash list  --pretty='format:%C(Yellow)%ad %Cred%h  %Creset%s' --date=format:'%d-%m-%y %H:%M'
+	stp = stash pop
+	ck = checkout
+	rsh = reset --hard
+[diff]
+  tool = delta
+  colorMoved = default
+
+
+[core]
+	excludesfile = /Users/ignacioambia/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+
+[core]
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+  light = false
+  side-by-side = true
+
+[merge]
+  conflictstyle = diff3
