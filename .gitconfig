@@ -1,6 +1,5 @@
-
 [user]
-	name = Ignacio Ambia 
+	name = Ignacio Ambia
 	email = ignacio.ambia@gmail.com
 # [core]
 # 	editor = code
@@ -15,10 +14,11 @@
 	l = lg -1
 	s = status
 	st = stash
-	stl = stash list  --pretty='format:%C(Yellow)%ad %Cred%h  %Creset%s' --date=format:'%d-%m-%y %H:%M'
+	stl = stash list --pretty='format:%C(Yellow) %as %Cred%h %Cgreen%gd%Creset %s'
 	stp = stash pop
 	ck = checkout
 	rsh = reset --hard
+  cp = cherry-pick
 [diff]
   tool = delta
   colorMoved = default
@@ -35,6 +35,7 @@
 
 [core]
   pager = delta
+	editor = lvim
 
 [interactive]
   diffFilter = delta --color-only
@@ -46,3 +47,7 @@
 
 [merge]
   conflictstyle = diff3
+
+
+[credential "https://github.com"]
+	username = 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
